@@ -14,7 +14,12 @@ class Airport
   end
 
   def take_off?(plane)
-    @plane -= plane
-    puts "This plane is now ready to take-off. #{plane} plane(s) in airport"
+
+    if rand(1..5) >= 4
+      fail "STORM ALERT: DO NOT LAND!"
+    else
+      @airport -= plane
+      puts "This plane is now ready to take-off. #{plane} plane(s) in airport"
+    end
   end
 end

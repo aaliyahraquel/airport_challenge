@@ -15,6 +15,11 @@ let (:plane) { Airport.new }
 
   it "should prevent take-off when it's stormy" do
 
+    expect(plane.take_off(1)).to raise_error "STORM ALERT: NO ACTION!"
+  end
+
+  it "should prevent land when it's stormy" do
+
     expect(plane.land_plane(1)).to raise_error "STORM ALERT: NO ACTION!"
   end
 end
